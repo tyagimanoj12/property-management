@@ -1,0 +1,112 @@
+<div>
+
+  <div class="card-deck">
+    <div class="card shadow-none mb-3 home-bg-1 white-text">
+      <div class="card-header pb-1">
+        <h3 class="my-0 mt-2 d-flex align-items-center">Properties </h3>
+      </div>
+      <div class="card-body">
+        <ul class="p-0 m-0">
+          <li class="py-1 d-flex  align-items-center">Rented: <span class="ml-auto">{{ dashboardData.assignedProperties }}</span></li>
+          <li class="py-1 d-flex  align-items-center">Vacant: <span class="ml-auto">{{
+              dashboardData.vacantProperties }}</span></li>
+              <li class="py-1 d-flex  align-items-center">Total: <span class="ml-auto">{{
+                  dashboardData.totalProperties }}</span></li>
+          <!-- <li class="py-1 d-flex  align-items-center">Confirmations: <span class="ml-auto">{{
+              dashboardData.phoneCalls.confirmations }}</span></li> -->
+        </ul>
+        <!-- <div>
+          <canvas baseChart [chartType]="'horizontalBar'" [options]="barOptions" [datasets]="callsSentVsResponsesBarData.datasets"
+            [colors]="barColors" [labels]="callsSentVsResponsesBarData.labels" [legend]="false" height="70"></canvas>
+        </div> -->
+        <!-- <div>
+          <canvas baseChart [chartType]="'horizontalBar'" [options]="barOptions" [datasets]="callsSentVsConfirmationBarData.datasets"
+            [colors]="barColors" [labels]="callsSentVsConfirmationBarData.labels" [legend]="false" height="70"></canvas>
+        </div> -->
+      </div>
+    </div>
+    <div class="card shadow-none mb-3 home-bg-1 white-text">
+      <div class="card-header pb-1">
+        <h3 class="my-0 mt-2 d-flex align-items-center">Payments </h3>
+      </div>
+      <div class="card-body">
+          <ul class="p-0 m-0">
+              <li class="py-1 d-flex  align-items-center">Credit: <span class="ml-auto">{{ dashboardData.creditPayments }}</span></li>
+              <li class="py-1 d-flex  align-items-center">Debit: <span class="ml-auto">{{
+                  dashboardData.debitPayments }}</span></li>
+                  <li class="py-1 d-flex  align-items-center">Total: <span class="ml-auto">{{
+                      dashboardData.totalPayments }}</span></li>
+              <!-- <li class="py-1 d-flex  align-items-center">Confirmations: <span class="ml-auto">{{
+                  dashboardData.phoneCalls.confirmations }}</span></li> -->
+            </ul>
+        <!-- <ul class="p-0 m-0">
+          <li class="py-1 d-flex  align-items-center">Sent: <span class="ml-auto">{{ dashboardData.payements.debit }}</span></li>
+          <li class="py-1 d-flex  align-items-center">Received: <span class="ml-auto">{{
+              dashboardData.payements.credit }}</span></li>
+          <li class="py-1 d-flex  align-items-center">Pending: <span class="ml-auto">{{
+              dashboardData.textMessages.confirmations }}</span></li>
+        </ul> -->
+        <!-- <div>
+          <canvas baseChart [chartType]="'horizontalBar'" [options]="barOptions" [datasets]="smsSentVsResponsesBarData.datasets"
+            [colors]="barColors" [labels]="smsSentVsResponsesBarData.labels" [legend]="false" height="70"></canvas>
+        </div>
+        <div>
+          <canvas baseChart [chartType]="'horizontalBar'" [options]="barOptions" [datasets]="smsSentVsConfirmationBarData.datasets"
+            [colors]="barColors" [labels]="smsSentVsConfirmationBarData.labels" [legend]="false" height="70"></canvas>
+        </div> -->
+      </div>
+    </div>
+    <!-- <div class="card shadow-none mb-3 home-bg-1 white-text">
+      <div class="card-header pb-1">
+        <h3 class="my-0 mt-2 d-flex align-items-center">Emails <i class="fas fa-info-circle ml-auto"></i></h3>
+      </div>
+      <div class="card-body">
+        <ul class="p-0 m-0">
+          <li class="py-1 d-flex  align-items-center">Sent: <span class="ml-auto">{{ dashboardData.emails.sent }}</span></li>
+          <li class="py-1 d-flex  align-items-center">Responses: <span class="ml-auto">{{
+              dashboardData.emails.responses }}</span></li>
+          <li class="py-1 d-flex  align-items-center">Confirmations: <span class="ml-auto">{{
+              dashboardData.emails.confirmations }}</span></li>
+        </ul>
+        <div>
+          <canvas baseChart [chartType]="'horizontalBar'" [options]="barOptions" [datasets]="emailsSentVsResponsesBarData.datasets"
+            [colors]="barColors" [labels]="emailsSentVsResponsesBarData.labels" [legend]="false" height="70"></canvas>
+        </div>
+        <div>
+          <canvas baseChart [chartType]="'horizontalBar'" [options]="barOptions" [datasets]="emailsSentVsConfirmationBarData.datasets"
+            [colors]="barColors" [labels]="emailsSentVsConfirmationBarData.labels" [legend]="false" height="70"></canvas>
+        </div>
+      </div>
+    </div> -->
+  </div>
+  <!-- <div class="card-deck">
+    <div class="card shadow-none mb-3 home-bg-1 white-text">
+      <div class="card-header pb-1">
+        <h3 class="my-0 mt-2 d-flex align-items-center">Total <i class="fas fa-info-circle ml-auto"></i></h3>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <ul class="pl-0 m-0 col">
+              <li class="py-1 d-flex  align-items-center">Sent: <span class="ml-auto">{{ dashboardData.total.sent }}</span></li>
+              <li class="py-1 d-flex  align-items-center">Responses: <span class="ml-auto">{{
+                  dashboardData.total.responses }}</span></li>
+              <li class="py-1 d-flex  align-items-center">Confirmations: <span class="ml-auto">{{
+                  dashboardData.total.confirmations }}</span></li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-8">
+            <div>
+              <canvas baseChart [chartType]="'horizontalBar'" [options]="barOptions" [datasets]="totalSentVsResponsesBarData.datasets"
+                [colors]="barColors" [labels]="totalSentVsResponsesBarData.labels" [legend]="false" height="70"></canvas>
+            </div>
+            <div>
+              <canvas baseChart [chartType]="'horizontalBar'" [options]="barOptions" [datasets]="totalSentVsConfirmationBarData.datasets"
+                [colors]="barColors" [labels]="totalSentVsConfirmationBarData.labels" [legend]="false" height="70"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>

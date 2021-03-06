@@ -1,0 +1,83 @@
+<div class="">
+    <form [formGroup]="propertyForm" (ngSubmit)="save(propertyForm.value, propertyForm.valid, $event)" class="horizontal-form">
+      <toaster-container [toasterconfig]="toasterconfig"></toaster-container>
+      <div class="md-card">
+        <div class="md-card-heading bg-primary">
+          <div class="md-card-title">Property</div>
+        </div>
+        <div class="md-card-body">
+            <div class="col-sm-12">
+                <div class="mda-form-group">
+                  <select class="mda-form-control" formControlName="propertyOwnerId" tabindex="3">
+                    <option value="">--Select--</option>
+                    <option *ngFor="let propertyowner of propertyOwners" [value]="propertyowner.value">
+                      {{ propertyowner.text }}
+                    </option>
+                  </select>
+                  <!-- <div *ngIf="submitted && f.propertyId.errors" class="invalid-feedback">
+                        <div *ngIf="submitted && f.propertyId.errors.required">Property is required</div>
+                      </div> -->
+                  <label>Property Owner</label>
+                </div>
+              </div>
+          <div class="row">  
+            <div class="col-md-6">
+              <div class="mda-form-group">
+                <input class="mda-form-control" formControlName="name" name="name" required="" tabindex="0"
+                    [ngClass]="{'is-invalid': submitted && propertyForm.controls['name'].hasError('required') }"
+                    aria-required="true" aria-invalid="true" />
+                  <div *ngIf="submitted && propertyForm.controls['name'].errors " class="invalid-feedback">
+                    <div *ngIf="submitted && propertyForm.controls['name'].hasError('required')">name is
+                      required</div>
+                  </div>
+                  <label>Name</label>
+              </div>
+            </div>       
+
+            <div class="col-md-6">
+              <div class="mda-form-group">
+                <input class="mda-form-control" formControlName="address" name="address" required="" tabindex="0"
+                    [ngClass]="{'is-invalid': submitted && propertyForm.controls['address'].hasError('required') }"
+                    aria-required="true" aria-invalid="true" />
+                  <div *ngIf="submitted && propertyForm.controls['address'].errors " class="invalid-feedback">
+                    <div *ngIf="submitted && propertyForm.controls['address'].hasError('required')">address is
+                      required</div>
+                  </div>
+                  <label>Address</label>
+              </div>
+            </div>  
+            <div class="col-md-6">
+              <div class="mda-form-group">
+                <input class="mda-form-control" formControlName="rent" name="rent" required="" tabindex="0"
+                    [ngClass]="{'is-invalid': submitted && propertyForm.controls['rent'].hasError('required') }"
+                    aria-required="true" aria-invalid="true" />
+                  <div *ngIf="submitted && propertyForm.controls['rent'].errors " class="invalid-feedback">
+                    <div *ngIf="submitted && propertyForm.controls['rent'].hasError('required')">rent is
+                      required</div>
+                  </div>
+                  <label>Rent</label>
+              </div>
+            </div>  
+            <div class="col-md-6">
+              <div class="mda-form-group">
+                <input class="mda-form-control" formControlName="area" name="area" required="" tabindex="0"
+                    [ngClass]="{'is-invalid': submitted && propertyForm.controls['area'].hasError('required') }"
+                    aria-required="true" aria-invalid="true" />
+                  <div *ngIf="submitted && propertyForm.controls['area'].errors " class="invalid-feedback">
+                    <div *ngIf="submitted && propertyForm.controls['area'].hasError('required')">area is
+                      required</div>
+                  </div>
+                  <label>Area</label>
+              </div>
+            </div>  
+          </div>   
+          <div class="row pt-5 pb-3">
+            <div class="col-sm-12">
+              <button type="button" (click)="onCancel()" class="btn btn-secondary float-left">Cancel</button>
+              <button type="submit" class="btn btn-primary float-right">Save</button>
+            </div>
+          </div>                       
+          </div>         
+        </div>    
+    </form>
+  </div>

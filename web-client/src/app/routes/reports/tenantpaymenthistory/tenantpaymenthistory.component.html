@@ -1,0 +1,86 @@
+<div class="card card-default loader">       
+        <div class="card-header">
+          <div class="card-title">Tenant Details</div>
+        </div>
+        <div class="card-body">
+          <!-- <div class="row mb-4">
+            <div class="col-lg-4">
+              <input type='text' class="form-control" placeholder='Type anything to search..' (keyup)='updateFilter($event)' />
+            </div>
+          </div> -->
+          <toaster-container [toasterconfig]="toasterconfig"></toaster-container>
+          <div class="loader-content-area">
+            <div class="custom-overlay" *ngIf="loader"></div>
+            <div class="ball-clip-rotate-multiple m-auto" *ngIf="loader">
+              <div></div>
+              <div></div>
+             
+            </div>
+            <div class="row">
+                <div class="col-sm-12"><label style="margin-right: 20px;">Tenant Name : <b>{{tenant.name}}</b>
+                  </label><label style="margin-right: 20px;"> Tenant Address : <b>{{tenant.address}}</b></label><label
+                    style="margin-right: 20px;">
+                    Email : <b>{{tenant.email}}</b></label><label style="margin-right: 30px;"> Phone : <b>{{tenant.phone}}</b></label></div>
+              </div>
+              <hr />
+            <mat-tab-group color="primary" animationDuration="0ms">
+                <mat-tab label="Tenant Payment History"> 
+                  <ngx-datatable #tenantpaymentdatatable class="bootstrap" [headerHeight]="50" [count]="page.totalElements" [offset]="page.pageNumber"
+                  [limit]="page.size" [columnMode]="'force'" [footerHeight]="50" [rowHeight]="'auto'" [externalPaging]="true"
+                  [rows]="paymentrows" (page)='setPage($event)'>
+                  <ngx-datatable-column name="Property Name" prop="propertyName">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                      {{value}}
+                    </ng-template>
+                  </ngx-datatable-column>
+                  <ngx-datatable-column name="Payment Type" prop="paymentType">
+                      <ng-template ngx-datatable-cell-template let-value="value">
+                        {{value}}
+                      </ng-template>
+                </ngx-datatable-column>
+                  <ngx-datatable-column name="Amount" prop="amount">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                      {{value}}
+                    </ng-template>
+                  </ngx-datatable-column>
+                  <ngx-datatable-column name="Tenant Name" prop="tenantName">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                      {{value}}
+                    </ng-template>
+                  </ngx-datatable-column>
+                   <!-- <ngx-datatable-column name="Property Owner Name" prop="propertyOwnerName">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                      {{value}}
+                    </ng-template>
+                  </ngx-datatable-column>     -->
+                </ngx-datatable></mat-tab>
+                <mat-tab label="Tenant Property History">
+                  <ngx-datatable #tenantpropertydatatable class="bootstrap" [headerHeight]="50" [count]="page.totalElements" [offset]="page.pageNumber"
+                  [limit]="page.size" [columnMode]="'force'" [footerHeight]="50" [rowHeight]="'auto'" [externalPaging]="true"
+                  [rows]="propertyrows" (page)='setPage($event)'>
+                  <ngx-datatable-column name="Name" prop="propertyName">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                      {{value}}
+                    </ng-template>
+                  </ngx-datatable-column>
+                  <ngx-datatable-column name="Address" prop="address">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                      {{value}}
+                    </ng-template>
+                  </ngx-datatable-column>
+                  <ngx-datatable-column name="Rent" prop="rent">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                      {{value}}
+                    </ng-template>
+                  </ngx-datatable-column>
+                   <ngx-datatable-column name="Rent Start Date" prop="rentStartDate">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                      {{value}}
+                    </ng-template>
+                  </ngx-datatable-column>               
+                </ngx-datatable></mat-tab>
+                <!-- <mat-tab label="Third">Content 3</mat-tab> -->
+              </mat-tab-group>
+          </div>
+        </div>
+      </div>

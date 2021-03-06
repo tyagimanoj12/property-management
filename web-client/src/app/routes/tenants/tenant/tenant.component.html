@@ -1,0 +1,69 @@
+<div class="">
+    <form [formGroup]="tenantForm" (ngSubmit)="save(tenantForm.value, tenantForm.valid, $event)" class="horizontal-form">
+      <toaster-container [toasterconfig]="toasterconfig"></toaster-container>
+      <div class="md-card">
+        <div class="md-card-heading bg-primary">
+          <div class="md-card-title">Tenant</div>
+        </div>
+        <div class="md-card-body">
+          <div class="row">  
+            <div class="col-md-6">
+              <div class="mda-form-group">
+                <input class="mda-form-control" formControlName="name" name="name" required="" tabindex="0"
+                    [ngClass]="{'is-invalid': submitted && tenantForm.controls['name'].hasError('required') }"
+                    aria-required="true" aria-invalid="true" />
+                  <div *ngIf="submitted && tenantForm.controls['name'].errors " class="invalid-feedback">
+                    <div *ngIf="submitted && tenantForm.controls['name'].hasError('required')">name is
+                      required</div>
+                  </div>
+                  <label>Name</label>
+              </div>
+            </div>       
+
+            <div class="col-md-6">
+              <div class="mda-form-group">
+                <input class="mda-form-control" formControlName="email" name="email" required="" tabindex="0"
+                    [ngClass]="{'is-invalid': submitted && tenantForm.controls['email'].hasError('required') }"
+                    aria-required="true" aria-invalid="true" />
+                  <div *ngIf="submitted && tenantForm.controls['email'].errors " class="invalid-feedback">
+                    <div *ngIf="submitted && tenantForm.controls['email'].hasError('required')">email is
+                      required</div>
+                  </div>
+                  <label>Email</label>
+              </div>
+            </div>  
+            <div class="col-md-6">
+              <div class="mda-form-group">
+                <input class="mda-form-control" formControlName="phone" name="phone" required="" tabindex="0"
+                    [ngClass]="{'is-invalid': submitted && tenantForm.controls['phone'].hasError('required') }"
+                    aria-required="true" aria-invalid="true" />
+                  <div *ngIf="submitted && tenantForm.controls['phone'].errors " class="invalid-feedback">
+                    <div *ngIf="submitted && tenantForm.controls['phone'].hasError('required')">phone is
+                      required</div>
+                  </div>
+                  <label>Phone</label>
+              </div>
+            </div>  
+            <div class="col-md-6">
+              <div class="mda-form-group">
+                <input class="mda-form-control" formControlName="address" name="address" required="" tabindex="0"
+                    [ngClass]="{'is-invalid': submitted && tenantForm.controls['address'].hasError('required') }"
+                    aria-required="true" aria-invalid="true" />
+                  <div *ngIf="submitted && tenantForm.controls['address'].errors " class="invalid-feedback">
+                    <div *ngIf="submitted && tenantForm.controls['address'].hasError('required')">address is
+                      required</div>
+                  </div>
+                  <label>Address</label>
+              </div>
+            </div>  
+          </div>   
+          <div class="row pt-5 pb-3">
+            <div class="col-sm-12">
+              <button type="button" (click)="onCancel()" class="btn btn-secondary float-left">Cancel</button>
+              <button type="submit" class="btn btn-primary float-right">Save</button>
+            </div>
+          </div>                       
+          </div>         
+        </div>    
+    </form>
+  </div>

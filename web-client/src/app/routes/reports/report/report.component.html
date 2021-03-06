@@ -1,0 +1,72 @@
+<div class="card card-default loader">
+   
+    <div class="card-header">
+      <div class="card-title">Reports</div>
+      <!-- <mat-tab-group color="primary" animationDuration="0ms">
+        <mat-tab label="First">Content 1</mat-tab>
+        <mat-tab label="Second">Content 2</mat-tab>
+        <mat-tab label="Third">Content 3</mat-tab>
+      </mat-tab-group> -->
+    </div>
+
+    <div class="card-header">
+        <div class="card-title">
+          <button class="btn btn-primary" (click)="navigateToAddPayment('Debit')"> Payment From Tenants</button>
+          <button class="btn btn-primary" (click)="navigateToAddPayment('Credit')">Payment To Owners</button>
+          <!-- <button class="btn btn-primary" (click)="navigateToAddPayment('properties')">Properties</button>
+          <button class="btn btn-primary" (click)="navigateToAddPayment('owner')">Add New Payment</button>
+          <button class="btn btn-primary" (click)="navigateToAddPayment('owner')">Add New Payment</button> -->
+        </div>
+      </div>
+    <div class="card-body">
+      <!-- <div class="row mb-4">
+        <div class="col-lg-4">
+          <input type='text' class="form-control" placeholder='Type anything to search..' (keyup)='updateFilter($event)' />
+        </div>
+      </div> -->
+      <toaster-container [toasterconfig]="toasterconfig"></toaster-container>
+      <div class="loader-content-area">
+        <div class="custom-overlay" *ngIf="loader"></div>
+        <div class="ball-clip-rotate-multiple m-auto" *ngIf="loader">
+          <div></div>
+          <div></div>
+        </div>
+        <ngx-datatable #mydatatable class="bootstrap" [headerHeight]="50" [count]="page.totalElements" [offset]="page.pageNumber"
+          [limit]="page.size" [columnMode]="'force'" [footerHeight]="50" [rowHeight]="'auto'" [externalPaging]="true"
+          [rows]="rows" (page)='setPage($event)'>
+          <ngx-datatable-column name="Property Name" prop="propertyName">
+            <ng-template ngx-datatable-cell-template let-value="value">
+              {{value}}
+            </ng-template>
+          </ngx-datatable-column>
+          <!-- <ngx-datatable-column name="Payment Type" prop="paymentType">
+              <ng-template ngx-datatable-cell-template let-value="value">
+                {{value}}
+              </ng-template>
+        </ngx-datatable-column> -->
+          <ngx-datatable-column name="Amount" prop="amount">
+            <ng-template ngx-datatable-cell-template let-value="value">
+              {{value}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Tenant Name" prop="tenantName">
+            <ng-template ngx-datatable-cell-template let-value="value">
+              {{value}}
+            </ng-template>
+          </ngx-datatable-column>
+           <ngx-datatable-column name="Property Owner Name" prop="propertyOwnerName">
+            <ng-template ngx-datatable-cell-template let-value="value">
+              {{value}}
+            </ng-template>
+          </ngx-datatable-column>        
+
+          <!-- <ngx-datatable-column name="Action">
+            <ng-template ngx-datatable-cell-template let-row="row">
+              <a (click)="onEdit(row)" data-id="row['paymentId']"><i class="fas fa-pencil-alt"></i></a>
+              <a (click)="confirmDelete(row)" data-id="row['paymentId']"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </ng-template>
+          </ngx-datatable-column> -->
+        </ngx-datatable>
+      </div>
+    </div>
+  </div>

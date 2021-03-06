@@ -1,0 +1,90 @@
+<div class="">
+  <form [formGroup]="paymentForm" (ngSubmit)="save(paymentForm.value, paymentForm.valid, $event)"
+    class="horizontal-form">
+    <toaster-container [toasterconfig]="toasterconfig"></toaster-container>
+    <div class="md-card">
+      <div class="md-card-heading bg-primary">
+        <div class="md-card-title">Payment</div>
+      </div>
+      <div class="md-card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mda-form-group">
+              <select class="mda-form-control" (change)="onChange($event)" [(ngModel)]="paymentType" formControlName="paymentType" tabindex="3">
+                <option value="">--Select--</option>
+                <option value="1">Payment From Tenant</option>
+                <option value="2">Payment To Property Owner</option>
+              </select>
+              <!-- <div *ngIf="submitted && f.paymentType.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f.paymentType.errors.required">PaymentType is required</div>
+                  </div> -->
+              <label>Payment Type</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mda-form-group">
+              <input class="mda-form-control" [(ngModel)]="amount" formControlName="amount" name="amount" required="" tabindex="0"
+                [ngClass]="{'is-invalid': submitted && paymentForm.controls['amount'].hasError('required') }"
+                aria-required="true" aria-invalid="true" />
+              <div *ngIf="submitted && paymentForm.controls['amount'].errors " class="invalid-feedback">
+                <div *ngIf="submitted && paymentForm.controls['amount'].hasError('required')">Amount is
+                  required</div>
+              </div>
+              <label>Amount</label>
+            </div>
+          </div>
+          <div class="col-md-6" *ngIf="isshow">
+            <div class="mda-form-group">
+              <select class="mda-form-control" (change)="onTenantChange($event)" [(ngModel)]="tenantId" formControlName="tenantId" tabindex="3">
+                <option value="">--Select--</option>
+                <option *ngFor="let tenant of tenants" [value]="tenant.value">
+                  {{ tenant.text }}
+                </option>
+              </select>
+              <!-- <div *ngIf="submitted && f.tenantId.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f.tenantId.errors.required">Property is required</div>
+                  </div> -->
+              <label>Tenant</label>
+            </div>
+          </div>
+        </div>       
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mda-form-group">
+              <select class="mda-form-control" (change)="onPropertyChange($event)" [(ngModel)]="propertyId" formControlName="propertyId" tabindex="3">
+                <option value="">--Select--</option>
+                <option *ngFor="let property of properties" [value]="property.value">
+                  {{ property.text }}
+                </option>
+              </select>
+              <!-- <div *ngIf="submitted && f.propertyId.errors" class="invalid-feedback">
+              <div *ngIf="submitted && f.propertyId.errors.required">Property is required</div>
+            </div> -->
+              <label>Property</label>
+            </div>
+          </div>
+          <div class="col-sm-6" *ngIf="!isshow">
+              <div class="mda-form-group" >
+                <select class="mda-form-control" (change)="onOwnerChange($event)" [(ngModel)]="propertyOwnerId" formControlName="propertyOwnerId" tabindex="3">
+                  <option value="">--Select--</option>
+                  <option *ngFor="let propertyowner of propertyOwners" [value]="propertyowner.value">
+                    {{ propertyowner.text }}
+                  </option>
+                </select>
+                <!-- <div *ngIf="submitted && f.propertyId.errors" class="invalid-feedback">
+                            <div *ngIf="submitted && f.propertyId.errors.required">Property is required</div>
+                          </div> -->
+                <label>Property Owner</label>
+              </div>
+            </div>
+        </div>
+        <div class="row pt-5 pb-3">
+          <div class="col-sm-12">
+            <button type="button" (click)="onCancel()" class="btn btn-secondary float-left">Cancel</button>
+            <button type="submit" class="btn btn-primary float-right">Pay</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

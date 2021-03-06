@@ -1,0 +1,14 @@
+/.vs/MyPropertyWebApp/v15/.suo
+/MyProperty.Common/Class1.cs
+/MyProperty.Common/obj/Debug/netcoreapp2.2/MyProperty.Common.csprojAssemblyReference.cache
+/MyProperty.Data/Migrations/20190504175436_InitialCreate.Designer.cs
+/MyProperty.Data/Migrations/20190504175436_InitialCreate.cs
+/MyProperty.Data/Migrations/20190505144501_InitialCreate.Designer.cs
+/MyProperty.Data/Migrations/20190505144501_InitialCreate.cs
+/MyProperty.Data/Migrations/20190506005739_InitialCreate.Designer.cs
+/MyProperty.Data/Migrations/20190506005739_InitialCreate.cs
+/MyProperty.Data/obj/Debug/netcoreapp2.2/MyProperty.Data.assets.cache
+/MyProperty.Data/obj/Debug/netcoreapp2.2/e330cvfs.sql
+/MyProperty.Data/obj/Debug/netcoreapp2.2/i3gdmvwn.sql
+/MyProperty.Data/obj/Debug/netcoreapp2.2/jdjcls0m.sql
+/MyProperty.Services/Class1.cs

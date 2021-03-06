@@ -1,0 +1,78 @@
+/* You can add global styles to this file, and also import other style files */
+
+//== Vendor
+@import '~@fortawesome/fontawesome-free-webfonts/css/fa-brands.css';
+@import '~@fortawesome/fontawesome-free-webfonts/css/fa-regular.css';
+@import '~@fortawesome/fontawesome-free-webfonts/css/fa-solid.css';
+@import '~@fortawesome/fontawesome-free-webfonts/css/fontawesome.css';
+@import '~simple-line-icons/css/simple-line-icons.css';
+
+@import '~loaders.css/loaders.css';
+
+@import '~angular2-toaster/toaster.css';
+
+@import '~sweetalert/dist/sweetalert.css';
+
+//== Bootstrap
+@import "./app/shared/styles/bootstrap.scss";
+//== Application
+@import "./app/shared/styles/app.scss";
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.toast-top-right {
+  top: 70px !important;
+}
+
+td.select-custom select {
+  // max-width:215px;
+  width: 100%;
+  max-width:200px;
+}
+
+
+#workflowItemsTable timepicker table tbody tr td {
+  padding: 0px !important;
+  border: none !important;
+  vertical-align: middle !important;
+}
+
+#workflowItemsTable timepicker table tbody tr td .bs-timepicker-field {
+  width: 60px !important;
+}
+
+.loader-content-area {
+  position: relative;
+}
+
+.loader-content-area .custom-overlay {
+  background: rgba(63, 81, 181, 0.11);
+  z-index: 999;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.loader-content-area .ball-clip-rotate-multiple {
+  position: absolute;
+  left: 0px;
+  right: 0;
+  top: 50%;
+}
+
+input.is-error, select.is-error,  textarea.is-error {
+border-color:#F00;
+border-bottom-width: 2px;
+}
+
+div.is-error div{color:#F00; padding-top:5px;}
+
+.custom-table-area table.table th{border-top:0; border-bottom: 0; background: #50B849; color: #FFF;}
+.custom-table-area table.table th a{color: #50B849; background: #FFF; padding: 0; border-radius: 20px; width: 24px; height: 24px; display: inline-block; text-align: center; line-height: 24px;}
+.custom-table-area table.table tr td{border-top:0;}
+
+.custom-heading-area a{color: #50B849; background: #FFF; padding: 0; border-radius: 20px; width: 24px; height: 24px; display: inline-block; text-align: center; line-height: 24px;}
+
+

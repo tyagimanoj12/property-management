@@ -1,0 +1,53 @@
+<div class="card card-default loader">
+        <!-- <div class="card-header">
+          <div class="card-title"><button class="btn btn-primary" (click)="navigateToAddProperty()">Add New Property</button></div>
+        </div> -->
+        <div class="card-header">
+          <div class="card-title">Client Property History</div>
+        </div>
+        <div class="card-body">
+          <!-- <div class="row mb-4">
+            <div class="col-lg-4">
+              <input type='text' class="form-control" placeholder='Type anything to search..' (keyup)='updateFilter($event)' />
+            </div>
+          </div> -->
+          <toaster-container [toasterconfig]="toasterconfig"></toaster-container>
+          <div class="loader-content-area">
+            <div class="custom-overlay" *ngIf="loader"></div>
+            <div class="ball-clip-rotate-multiple m-auto" *ngIf="loader">
+              <div></div>
+              <div></div>
+            </div>
+            <ngx-datatable #mydatatable class="bootstrap" [headerHeight]="50" [count]="page.totalElements" [offset]="page.pageNumber"
+              [limit]="page.size" [columnMode]="'force'" [footerHeight]="50" [rowHeight]="'auto'" [externalPaging]="true"
+              [rows]="rows" (page)='setPage($event)'>
+              <ngx-datatable-column name="Name" prop="name">
+                <ng-template ngx-datatable-cell-template let-value="value">
+                  {{value}}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="Address" prop="address">
+                <ng-template ngx-datatable-cell-template let-value="value">
+                  {{value}}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="Rent" prop="rent">
+                <ng-template ngx-datatable-cell-template let-value="value">
+                  {{value}}
+                </ng-template>
+              </ngx-datatable-column>
+               <ngx-datatable-column name="Area" prop="area">
+                <ng-template ngx-datatable-cell-template let-value="value">
+                  {{value}}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="Action">
+                <ng-template ngx-datatable-cell-template let-row="row">
+                  <a (click)="onEdit(row)" data-id="row['propertyId']"><i class="fas fa-pencil-alt"></i></a>
+                  <a (click)="confirmDelete(row)" data-id="row['propertyId']"><i class="fa fa-times" aria-hidden="true"></i></a>
+                </ng-template>
+              </ngx-datatable-column>
+            </ngx-datatable>
+          </div>
+        </div>
+      </div>
